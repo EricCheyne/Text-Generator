@@ -1,4 +1,4 @@
-# Text_Generator
+# Text Generator
 
 Text Generator
 
