@@ -12,3 +12,5 @@ The program can predict the next word in a pseudo-sentence based on the previous
   - Use the Markov model to generate a text starting with a user-specified word and handle exceptions.
 - Stage 5/6: Generate full sentences
   - Modify the algorithm so that sentences always start with capital letters and end with punctuation marks.
+- Stage 6/6: Generate sentences based on trigrams
+  - Extend the program to create a Markov model based on trigrams in order to generate more sensible sentences.
