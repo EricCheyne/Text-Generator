@@ -6,7 +6,7 @@ from nltk.tokenize import WhitespaceTokenizer
 from collections import Counter
 
 # Opening and reading the corpus file
-filename = "corpus.txt"#input()
+filename = input()
 file_content = open(filename, "r", encoding="utf-8")
 
 # Breaking the corpus into individual words
@@ -27,7 +27,7 @@ for _ in range(10):
     end_of_sentence = False
     full_sentence = []
 
-# Selecting an Uppercase word as first word of sentence
+    # Selecting an Uppercase word as first word of sentence
     random_list = list(model.keys()).copy()
     random.shuffle(random_list)
     for w in random_list:
@@ -36,13 +36,13 @@ for _ in range(10):
             break
     full_sentence.append(previous_word)
 
-# Building the rest of sentence
+    # Building the rest of sentence
     while not end_of_sentence:
         word_list = list(model[previous_word].keys())
         word_weights = tuple(model[previous_word].values())
         word_sentence = random.choices(word_list, weights=word_weights)[0]
 
-# Ending sentence at nearest punctuation mark when sentence is bigger tha 5 words
+        # Ending sentence at nearest punctuation mark when sentence is bigger tha 5 words
         if sentence_index >= 3 and re.search('[.!?]', word_sentence) is not None:
             full_sentence.append(word_sentence)
             previous_word = word_sentence
