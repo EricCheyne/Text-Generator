@@ -76,7 +76,29 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
 
 - Stage 4/6: Generate random text
-  - Use the Markov model to generate a text starting with a user-specified word and handle exceptions.
+
+  - Theory
+
+    - We suggest using the method random.choices() to select the most probable tail from the list of possible tails based on the corresponding repetition counts. This method is similar to random.choice() with the exception that it also considers user-specified weights during the process. The method takes four arguments: population, weights, cum_weights, and k. For this project, we only care about the first two arguments: population, which is a list of elements to choose from, and weights, which is a list of relative weights that correspond to the elements of the population. Since the other two arguments have sensible default values, we don't necessarily have to specify them.
+
+  - Description
+
+    - We have our model, fantastic! What's next? Well, the model can already be used to predict the next word in a chain by feeding it any head (of a bigram) from the corpus and retrieving the most probable tail from the corresponding entry. But how do we start the chain, what should be the first word?
+
+    - Of course, we could choose a word manually, but this is an error-prone solution because we might take a word that is not in the corpus. A better way to start is to choose a random word from the corpus and feed it to the model so that it predicts the next word.
+    - After the next word is acquired, it should be used to predict the following word, and so on, thus continuing the chain.
+
+  - Objectives
+
+    - Choose a random word from the corpus that will serve as the first word of the chain.
+    - The second word should be predicted by looking up the first word of the chain in the model and choosing the most probable next word from the set of possible follow-ups. Right now, an entry contains all the possible tails that might follow the selected head along with their corresponding repetition counts. Using the repetition counts, you will be able to choose the most probable option.
+    - The second step should be repeated until the length of the chain is 10 words, but this time, the current last word of the chain should be used to look up another probable word to continue the sentence.
+    - Using the algorithm described above, generate chains consisting of 10 tokens, join the resulting tokens together, and print them as a pseudo-sentence. Keep in mind that a pseudo-sentence can consist of multiple actual sentences, so having punctuation marks inside pseudo-sentences is completely valid.
+
+    - Generate and print 10 sentences like that. Keep in mind that every generated pseudo-sentence should be on a new line.
+
+    - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as a command line input.
+
 - Stage 5/6: Generate full sentences
   - Modify the algorithm so that sentences always start with capital letters and end with punctuation marks.
 - Stage 6/6: Generate sentences based on trigrams
