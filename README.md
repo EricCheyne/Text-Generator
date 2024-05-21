@@ -11,9 +11,10 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - f = open("corpus.txt", "r", encoding="utf-8")
   - Description
 
-    - In this project, we will use a corpus that contains the entire script of Game of Thrones. As the corpus will be used to "train" a probabilistic model that will predict the next word in a chain of words, the generated text will resemble the style and vocabulary of the source material. The naturalness of the generated text depends on the data. The bigger the corpus, the better the results. The corpus that we will be using in this project consists of around 300,000 tokens. That is not perfect, but it's good enough to get interesting results.    - 
+    - In this project, we will use a corpus that contains the entire script of Game of Thrones. As the corpus will be used to "train" a probabilistic model that will predict the next word in a chain of words, the generated text will resemble the style and vocabulary of the source material. The naturalness of the generated text depends on the data. The bigger the corpus, the better the results. The corpus that we will be using in this project consists of around 300,000 tokens. That is not perfect, but it's good enough to get interesting results.
 
     - After you complete this project, you can use any corpus you want to experiment with different styles and lengths — you might even compile your own corpus and go with that. But for now, let's just stick to the corpus provided for this project. By the way, don't hesitate to test your program on your own with our corpus.
+
   - Objectives
 
     - In order to prepare the corpus for use in this project, we need to take the following important steps:
@@ -23,15 +24,34 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - Break the corpus into individual words. To create a Markov model, we use the simplest form of tokenization: tokens are separated by whitespace characters such as spaces, tabulation, and newline characters. Punctuation marks should be left untouched since later on, they will play an important role in signaling where a sentence should end.
 
     - Acquire and print the following information about the corpus under the section of the output called Corpus statistics: - The number of all tokens; the number of all unique tokens, that is, the number of tokens without repetition.
- 
+
     - Each of the above should be in a new line.
 
     - Take an integer as user input and print the token with the corresponding index. Repeat this process until the string exit is input. Also, make sure that the input index is actually an integer that falls in the range of the corpus. If that is not the case, print an error message and request a new input. Error messages should contain the types of errors (Type Error, Index Error, Value Error, etc.).
 
     - Each token should be printed in a new line.
 
-- Stage 2/6: Break the dataset int bigrams
-  - Bigrams are sequences of two consecutive words from the dataset. Transform the preprocessed corpus into a list of bigrams.
+- Stage 2/6: Break the dataset into bigrams
+
+  - Theory
+
+    - To study how texts are structured, we usually have to take into consideration not just individual words but sequences of words and the relationships between them. These sequences might consist of any number of words, but usually, the number is limited to only two or three.
+    - A sequence of any number of adjacent tokens is called an n-gram, where n is the number of tokens. A sequence of two adjacent tokens is called a bigram. Not surprisingly, a sequence of three adjacent tokens is a trigram. For now, we will stick to bigrams only.
+
+  - When referring to bigrams in this project, we divide them into two parts: head and tail. In our case, the first token of the bigram is the head and the second token is the tail. For example, in the bigram good night, good is the head and night is the tail.
+
+  - Description
+
+    - After the training data is acquired and preprocessed, it has to be transformed into a Markov chain model. The first step is to map the connections between tokens in the corpus. For this, we are going to use bigrams.
+
+  - Objectives
+    - Transform the corpus into a collection of bigrams. The results should contain all the possible bigrams from the corpus, which means that:
+    - Every token from the corpus should be a head of a bigram with the exception of the last token which cannot become a head since nothing follows it;
+    - Every token from the corpus should be a tail of a bigram with the exception of the first token which cannot possibly be the tail of a bigram because nothing precedes it.
+    - Output the number of all bigrams in the corpus.
+    - Take an integer as user input and print the bigrams with the corresponding index. Repeat this process until the string exit is input. Also, make sure that the input is actually an integer that falls in the range of the collection of bigrams. If that is not the case, print an error message and request a new input. Error messages should contain the types of errors (Type Error, Value Error, Index Error, etc.). Each bigram should have the format Head: [head] Tail: [tail] and should be printed in a new line.
+    - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
+
 - Stage 3/6: Create a Markov chain model
   - Create a Markov chain model that shows the probability of certain words appearing after a given chain of words.
 - Stage 4/6: Generate random text
