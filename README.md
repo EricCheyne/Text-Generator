@@ -100,6 +100,25 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as a command line input.
 
 - Stage 5/6: Generate full sentences
-  - Modify the algorithm so that sentences always start with capital letters and end with punctuation marks.
+
+  - Description
+
+    - As you can see, the algorithm is now capable of generating pseudo-random text based on Markov chains. The problem is that the resulting text does not resemble real sentences at all. First, the resulting text is always ten tokens long. Second, it does not always start with capital letters. Third, it usually does not even end with correct punctuation such as periods, exclamation marks, or question marks.
+
+    - Luckily, by identifying the problem, a good programmer can always find ways to resolve it.
+
+  - Objectives
+
+    - Make the algorithm more realistic by generating pseudo-sentences instead of just random text.
+    - The sentences that are being generated should:
+      - always start with capitalized words ("This is beautiful.", "You are a great programmer!", etc.);
+      - not start with a word that ends with a sentence-ending punctuation mark ("Okay.", "Nice.", "Good.", "Look!", "Jon!", etc.);
+      - always end with a sentence-ending punctuation mark like ., !, or ?;
+      - should not be shorter than 5 tokens.
+    - Generate and print exactly 10 pseudo-sentences that meet these criteria. A pseudo-sentence should end when the first sentence-ending punctuation mark is encountered after the minimal sentence length (5 tokens) is reached.
+    - Note that every generated pseudo-sentence should be on a new line.
+
+    - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as user input.
+
 - Stage 6/6: Generate sentences based on trigrams
   - Extend the program to create a Markov model based on trigrams in order to generate more sensible sentences.
