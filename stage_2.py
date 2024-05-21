@@ -1,4 +1,3 @@
-# Write your code here
 import nltk
 from nltk.tokenize import WhitespaceTokenizer
 
