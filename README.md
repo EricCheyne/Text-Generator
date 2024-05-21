@@ -146,3 +146,16 @@ The program can predict the next word in a pseudo-sentence based on the previous
       - Keep in mind that every generated pseudo-sentence should be in a new line.
 
       - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as user input.
+
+- References
+  - JetBrains Academy
+  - Corpus
+    - "Game of Thrones" Television Series Script
+    - https://stepik.org/media/attachments/lesson/385260/corpus.txt
+  - "Speech and Language Processing" by Dan Jurafsky and James H. Martin
+    - https://web.stanford.edu/~jurafsky/slp3/
+  - Natural Language Toolkit Documentation
+    - https://www.nltk.org/
+  - Python Documentation
+    - https://docs.python.org/3/library/collections.html#module-collections
+    - https://docs.python.org/3/library/random.html
