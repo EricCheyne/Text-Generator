@@ -6,7 +6,7 @@ The program can predict the next word in a pseudo-sentence based on the previous
 
   - Theory
     - Open the given text corpus, break the text into separate words, and obtain some properties of the corpus.
-    - Preprocess the text corpus Theory In Natural Language Processing (NLP), most work starts by obtaining and preprocessing a text corpus. The word "corpus" might seem scary at first, but it actually simply refers to a collection of textual data. Its contents might be related thematically or based on some particular linguistic phenomena. Corpora usually have some kind of annotation that contains additional information about the text.
+    - The work starts by obtaining and preprocessing a text corpus. The word "corpus" might seem scary at first, but it actually simply refers to a collection of textual data. Its contents might be related thematically or based on some particular linguistic phenomena. Corpora usually have some kind of annotation that contains additional information about the text.
     - For most linguistic tasks, the corpus has to be processed before we can access all the important information. One of the most basic operations is tokenization.
     - In this project, the corpus is stored as a .txt file with UTF-8 encoding. When reading a text file in Python, you can specify the encoding of the document like this:
       - f = open("corpus.txt", "r", encoding="utf-8")
