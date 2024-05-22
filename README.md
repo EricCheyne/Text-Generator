@@ -155,7 +155,7 @@ The program can predict the next word in a pseudo-sentence based on the previous
   - "Speech and Language Processing" by Dan Jurafsky and James H. Martin
     - https://web.stanford.edu/~jurafsky/slp3/
   - Natural Language Toolkit Documentation
-    - https://www.nltk.org/
+    - https://www.nltk.org/book/
   - Python Documentation
     - https://docs.python.org/3/library/collections.html#module-collections
     - https://docs.python.org/3/library/random.html
