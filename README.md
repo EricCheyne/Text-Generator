@@ -32,6 +32,11 @@ The program can predict the next word in a pseudo-sentence based on the previous
 
     - Each token should be printed in a new line.
 
+  - Example - The output of the program should look like this. Note that this is just an example: you might get completely different results.
+    - Input: corpus.txt - Output: Corpus statistics
+      All tokens: 32434234
+      Unique tokens: 433242 - Input: 0 - Output: What - Input: 4 - Output: They're - Input: 5 - Output: savages - Input: 32 - Output: like - Input: 42 - Output: ever - Input: 65 - Output: dead - Input: 256 - Output: the - Input: 532 - Output: are - Input: 756 - Output: king. - Input: 943287563823572346 - Output: Index Error. Please input an integer that is in the range of the corpus. - Input: six - Output: Type Error. Please input an integer. - Input: -1 - Output: North! - Input: exit
+
 - Stage 2/6: Break the dataset into bigrams
 
   - Theory
