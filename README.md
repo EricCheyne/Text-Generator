@@ -33,21 +33,34 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - Each token should be printed in a new line.
 
   - Example - The output of the program should look like this. Note that this is just an example: you might get completely different results.
-    - Input: corpus.txt - Output: Corpus statistics
-      All tokens: 32434234
-      Unique tokens: 433242
-    - Input: 0 - Output: What
-    - Input: 4 - Output: They're
-    - Input: 5 - Output: savages
-    - Input: 32 - Output: like
-    - Input: 42 - Output: ever
-    - Input: 65 - Output: dead
-    - Input: 256 - Output: the
-    - Input: 532 - Output: are
-    - Input: 756 - Output: king.
-    - Input: 943287563823572346 - Output: Index Error. Please input an integer that is in the range of the corpus.
-    - Input: six - Output: Type Error. Please input an integer.
-    - Input: -1 - Output: North!
+    - Input: corpus.txt
+      - Output: Corpus statistics
+      - Output: All tokens: 32434234
+      - Output: Unique tokens: 433242
+    - Input: 0
+      - Output: What
+    - Input: 4
+      - Output: They're
+    - Input: 5
+      - Output: savages
+    - Input: 32
+      - Output: like
+    - Input: 42
+      - Output: ever
+    - Input: 65
+      - Output: dead
+    - Input: 256
+      - Output: the
+    - Input: 532
+      - Output: are
+    - Input: 756
+      - Output: king.
+    - Input: 943287563823572346
+      - Output: Index Error. Please input an integer that is in the range of the corpus.
+    - Input: six
+      - Output: Type Error. Please input an integer.
+    - Input: -1
+      - Output: North!
     - Input: exit
 
 - Stage 2/6: Break the dataset into bigrams
@@ -73,19 +86,32 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
 
   - Example - This is what the expected output should look like. Tabs and spaces do not matter during testing, but newlines do.
-    - Input: corpus.txt - Output: Number of bigrams: 2343554
-    - Input: 0 - Output: Head: What Tail: do
-    - Input: 4 - Output: Head: They're Tail: savages.
-    - Input: 5 - Output: Head: savages. Tail: One
-    - Input: 34 - Output: Head: I've Tail: never
-    - Input: 42 - Output: Head: ever Tail: in
-    - Input: 256 - Output: Head: the Tail: lads
-    - Input: 453 - Output: Head: sentence Tail: you
-    - Input: 2345 - Output: Head: don't Tail: understand
-    - Input: 3000 - Output: Head: can Tail: protect.
-    - Input: 943287563823572346 - Output: Index Error. Please input a value that is not greater than the number of all bigrams.
-    - Input: six - Output: Type Error. Please input an integer.
-    - Input: -1 - Output: Head: the Tail: North!
+    - Input: corpus.txt
+      - Output: Number of bigrams: 2343554
+    - Input: 0
+      - Output: Head: What Tail: do
+    - Input: 4
+      - Output: Head: They're Tail: savages.
+    - Input: 5
+      - Output: Head: savages. Tail: One
+    - Input: 34
+      - Output: Head: I've Tail: never
+    - Input: 42
+      - Output: Head: ever Tail: in
+    - Input: 256
+      - Output: Head: the Tail: lads
+    - Input: 453
+      - Output: Head: sentence Tail: you
+    - Input: 2345
+      - Output: Head: don't Tail: understand
+    - Input: 3000
+      - Output: Head: can Tail: protect.
+    - Input: 943287563823572346
+      - Output: Index Error. Please input a value that is not greater than the number of all bigrams.
+    - Input: six
+      - Output: Type Error. Please input an integer.
+    - Input: -1
+      - Output: Head: the Tail: North!
     - Input: exit
 
 - Stage 3/6: Create a Markov chain model
@@ -111,11 +137,40 @@ The program can predict the next word in a pseudo-sentence based on the previous
 
     - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
 
-  - Example - The output of the program should look something like this. The number of tabs and spaces does not matter, but newline characters do. - Input: corpus.txt - Input: Night - Output: Head: Night
-    Tail: King Count: 17
-    Tail: gathers Count: 9
-    Tail: King's Count: 4
-    Tail: is Count: 2
+  - Example - The output of the program should look something like this. The number of tabs and spaces does not matter, but newline characters do.
+    - Input: corpus.txt
+    - Input: Night
+      - Output:
+        - Head: Night
+        - Tail: King Count: 17
+        - Tail: gathers Count: 9
+        - Tail: King's Count: 4
+        - Tail: is Count: 2
+    - Input: Jon
+      - Output
+        - Head: Jon
+        - Tail: Snow Count: 36
+        - Tail: Snow. Count: 29
+        - Tail: Arryn Count: 14
+        - Tail: said Count: 10
+        - Tail: often Count: 6
+        - Tail: knows Count: 5
+        - Tail: left Count: 5
+    - Input: Northampton
+      - Output
+        - Head: Northampton
+        - Key Error. The requested word is not in the model Please input another word.
+    - Input: King
+      - Output
+        - Head: King
+        - Tail: in Count: 76
+        - Tail: Robert Count: 29
+        - Tail: of Count: 24
+        - Tail: Joffrey Count: 20
+        - Tail: Tommen Count: 6
+        - Tail: Stannis Count: 5
+        - Tail: Robb Count: 5
+    - Input: exit
 
 - Stage 4/6: Generate random text
 
@@ -141,6 +196,19 @@ The program can predict the next word in a pseudo-sentence based on the previous
 
     - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as a command line input.
 
+  - Example - The output of your program should have the same formatting style.
+    - Input: corpus.txt
+      - Output: so I saw him grow up against me halfway out
+        Queen of the night ashore for-- water. The Lannister song?
+        honor for all reading about me? Can't. Someone appears to
+        she would be easier than I sliced me, My atonement?
+        your days. Robert's return. A mountain of Casterly Rock. Has
+        much do me roar! For the King in the Kingslayer?
+        the side my pride. Don't lose. Have you were you
+        for you out there will take it You don't know.
+        she crucified the rest of them. The Boltons, the Watch
+        father Tywin sent here in their minds aren't they lick
+
 - Stage 5/6: Generate full sentences
 
   - Description
@@ -161,6 +229,19 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - Note that every generated pseudo-sentence should be on a new line.
 
     - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as user input.
+
+  - Example - The output of your program should look something like this but with different sentences.
+    - Input: corpus.txt
+      - Output: Ned Stark can still hold my head off, too.
+        Just look at us. It's still remember seeing each of Yunkai have had nothing anymore.
+        Braavos never attacks the Starks?
+        I don't think it's true.
+        I'm a captain. Of course he has a woman to protect us.
+        Trust me about them? He smells of the northern sons.
+        They have sold armor. I've taken your captors is how goes off our grasp.
+        I realized peace while my years has a Lannister.
+        Did you like the North more than your life?
+        With my brothers and the dawn I serve in irons.
 
 - Stage 6/6: Generate sentences based on trigrams
 
@@ -187,6 +268,19 @@ The program can predict the next word in a pseudo-sentence based on the previous
       - Keep in mind that every generated pseudo-sentence should be in a new line.
 
       - You should only print the output of the current stage and not the previous one. The name of the file that contains the corpus should be given as user input.
+
+  - Example - The output of your program should have the same formatting as shown below.
+    - Input: corpus.txt
+      - Output: I sent men over the Wall every night.
+        Kill him! Kill all who understand the law.
+        They say 1,000 slaves died building the Great Keep at Winterfell.
+        Queen Margaery. She walked in on Craster's Keep on the Iron Throne.
+        They say 1,000 slaves died building the Great Keep at Winterfell.
+        And why is the wheel our queen when she needed me the most.
+        Dothraki omens. I waited 17 years ago there came a night with no regrets.
+        Ah, yes. You shall now be held accountable.
+        Don't cry. It will all be for you.
+        Never understood why some knights felt the tears freeze on their own.
 
 - References
   - JetBrains Academy
