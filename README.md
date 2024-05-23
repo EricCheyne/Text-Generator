@@ -35,7 +35,20 @@ The program can predict the next word in a pseudo-sentence based on the previous
   - Example - The output of the program should look like this. Note that this is just an example: you might get completely different results.
     - Input: corpus.txt - Output: Corpus statistics
       All tokens: 32434234
-      Unique tokens: 433242 - Input: 0 - Output: What - Input: 4 - Output: They're - Input: 5 - Output: savages - Input: 32 - Output: like - Input: 42 - Output: ever - Input: 65 - Output: dead - Input: 256 - Output: the - Input: 532 - Output: are - Input: 756 - Output: king. - Input: 943287563823572346 - Output: Index Error. Please input an integer that is in the range of the corpus. - Input: six - Output: Type Error. Please input an integer. - Input: -1 - Output: North! - Input: exit
+      Unique tokens: 433242
+    - Input: 0 - Output: What
+    - Input: 4 - Output: They're
+    - Input: 5 - Output: savages
+    - Input: 32 - Output: like
+    - Input: 42 - Output: ever
+    - Input: 65 - Output: dead
+    - Input: 256 - Output: the
+    - Input: 532 - Output: are
+    - Input: 756 - Output: king.
+    - Input: 943287563823572346 - Output: Index Error. Please input an integer that is in the range of the corpus.
+    - Input: six - Output: Type Error. Please input an integer.
+    - Input: -1 - Output: North!
+    - Input: exit
 
 - Stage 2/6: Break the dataset into bigrams
 
@@ -60,7 +73,20 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
 
   - Example - This is what the expected output should look like. Tabs and spaces do not matter during testing, but newlines do.
-    - Input: corpus.txt - Output: Number of bigrams: 2343554 - Input: 0 - Output: Head: What Tail: do - Input: 4 - Output: Head: They're Tail: savages. - Input: 5 - Output: Head: savages. Tail: One - Input: 34 - Output: Head: I've Tail: never - Input: 42 - Output: Head: ever Tail: in - Input: 256 - Output: Head: the Tail: lads - Input: 453 - Output: Head: sentence Tail: you - Input: 2345 - Output: Head: don't Tail: understand - Input: 3000 - Output: Head: can Tail: protect. - Input: 943287563823572346 - Output: Index Error. Please input a value that is not greater than the number of all bigrams. - Input: six - Output: Type Error. Please input an integer. - Input: -1 - Output: Head: the Tail: North! - Input: exit
+    - Input: corpus.txt - Output: Number of bigrams: 2343554
+    - Input: 0 - Output: Head: What Tail: do
+    - Input: 4 - Output: Head: They're Tail: savages.
+    - Input: 5 - Output: Head: savages. Tail: One
+    - Input: 34 - Output: Head: I've Tail: never
+    - Input: 42 - Output: Head: ever Tail: in
+    - Input: 256 - Output: Head: the Tail: lads
+    - Input: 453 - Output: Head: sentence Tail: you
+    - Input: 2345 - Output: Head: don't Tail: understand
+    - Input: 3000 - Output: Head: can Tail: protect.
+    - Input: 943287563823572346 - Output: Index Error. Please input a value that is not greater than the number of all bigrams.
+    - Input: six - Output: Type Error. Please input an integer.
+    - Input: -1 - Output: Head: the Tail: North!
+    - Input: exit
 
 - Stage 3/6: Create a Markov chain model
 
@@ -84,6 +110,12 @@ The program can predict the next word in a pseudo-sentence based on the previous
     - Besides creating the model, we should also check that it works correctly. To test it, let's take a string as user input and print all the possible tails and their corresponding counts. If the model does not contain the specified head print the following error message Key Error. The requested word is not in the model. Please input another word. and ask for another until it is valid. Repeat until the string exit is input.
 
     - You should only print the output of the current stage and not the previous one, but like in the previous stage, the name of the file that contains the corpus should be given as user input.
+
+  - Example - The output of the program should look something like this. The number of tabs and spaces does not matter, but newline characters do. - Input: corpus.txt - Input: Night - Output: Head: Night
+    Tail: King Count: 17
+    Tail: gathers Count: 9
+    Tail: King's Count: 4
+    Tail: is Count: 2
 
 - Stage 4/6: Generate random text
 
