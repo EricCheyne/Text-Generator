@@ -283,7 +283,6 @@ The program can predict the next word in a pseudo-sentence based on the previous
         Never understood why some knights felt the tears freeze on their own.
 
 - References
-  - JetBrains Academy
   - Corpus
     - "Game of Thrones" Television Series Script
     - https://stepik.org/media/attachments/lesson/385260/corpus.txt
@@ -294,5 +293,7 @@ The program can predict the next word in a pseudo-sentence based on the previous
   - "Natural Language Processing with Python - Analyzing Text with the Natural Language Toolkit" by Steven Bird, Ewan Klein, and Edward Loper
     - https://www.nltk.org/book/
   - Python Documentation
-    - https://docs.python.org/3/library/collections.html#module-collections
-    - https://docs.python.org/3/library/random.html
+    - Random Module
+      - https://docs.python.org/3/library/random.html
+    - Regular Expressions Module
+      - https://docs.python.org/3.12/library/re.html
