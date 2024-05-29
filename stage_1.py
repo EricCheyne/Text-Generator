@@ -1,15 +1,19 @@
 from nltk.tokenize import WhitespaceTokenizer
+
 # Opening and reading the corpus file
 filename = input()
 file_content = open(filename, "r", encoding="utf-8")
+
 # Breaking the corpus into individual words
 tokenizer = WhitespaceTokenizer()
 tokens = tokenizer.tokenize(file_content.read())
 file_content.close()
+
 # Printing information
 print("Corpus statistics")
 print("All tokens: ", len(tokens))
 print("Unique tokens: ", len(set(tokens)))
+
 # Taking user input
 while True:
     user_input = input()
